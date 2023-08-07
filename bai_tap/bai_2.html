@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="info"></div>
+<script>
+    class Temperature {
+        doC;
+
+        constructor(doCInput) {
+            this.doC = doCInput;
+        }
+
+        getDoC() {
+            return this.doC;
+        }
+
+        setDoC(doCInput) {
+            this.doC = doCInput;
+        }
+
+        calDoK() {
+            return this.doC + 273.15;
+        }
+
+        calDoF() {
+            return this.doC * 1.8 + 32;
+        }
+
+        getInfo() {
+            return `Độ C: ${this.doC} <br> Độ F: ${this.calDoF()} <br> Độ K: ${this.calDoK()}`
+        }
+    }
+
+    function main() {
+        let nhietDo = new Temperature(25)
+        document.getElementById('info').innerHTML = nhietDo.getInfo();
+    }
+
+    main()
+</script>
+</body>
+</html>

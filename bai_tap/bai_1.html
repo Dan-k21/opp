@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="info"></div>
+<script>
+    class Rectangle {
+        width;
+        height;
+
+        constructor(widthInput, heightInput) {
+            this.width = widthInput;
+            this.height = heightInput;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        setWidth(widthInput) {
+            this.width = widthInput;
+        }
+
+        getHeight() {
+            return this.height;
+        }
+
+        setHeight(heightInput) {
+            this.height = heightInput;
+        }
+
+        calS() {
+            return this.width * this.height;
+        }
+
+        calC() {
+            return (this.width + this.height) * 2;
+        }
+
+        getInfo() {
+            return `Chiều rộng : ${this.width} <br> Chiều dài : ${this.height} <br> Diện tích: ${this.calS()} <br> Chu vi: ${this.calC()}`
+        }
+    }
+
+    function main() {
+        let hcn = new Rectangle(5, 4);
+        document.getElementById('info').innerHTML = hcn.getInfo();
+    }
+
+    main()
+</script>
+</body>
+</html>

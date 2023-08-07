@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="info"></div>
+<script>
+    class Student {
+        name;
+        age;
+        point;
+
+        constructor(nameInput, ageInput, pointInput) {
+            this.name = nameInput;
+            this.age = ageInput;
+            this.point = pointInput;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(nameInput) {
+            this.name = nameInput;
+        }
+
+        getAge() {
+            return this.age;
+        }
+
+        setAge(ageInput) {
+            this.age = ageInput;
+        }
+
+        getPoint() {
+            return this.point;
+        }
+
+        setPoint(pointInput) {
+            this.point = pointInput;
+        }
+
+        getAvg() {
+            let sum = 0;
+            for (let i = 0; i < this.point.length; i++) {
+                sum += this.point[i];
+            }
+            return sum / this.point.length;
+        }
+
+        getInfo() {
+            return 'Tên:' + this.name + '  Tuổi:' + this.age + '  Điểm TB:' + this.getAvg()
+        }
+    }
+
+    function main() {
+        let sinhVien1 = new Student('Dân', 17, [9, 10, 9]);
+        let sinhVien2 = new Student('Bạn Dân', 15, [9, 10, 10]);
+        if (sinhVien1.getAvg() < sinhVien2.getAvg()) {
+            document.getElementById('info').innerHTML = sinhVien2.getInfo()
+        } else if (sinhVien1.getAvg() > sinhVien2.getAvg()){
+            document.getElementById('info').innerHTML = sinhVien1.getInfo()
+        } else {
+            document.getElementById('info').innerHTML = sinhVien1.getInfo() + '<br>' + sinhVien2.getInfo()
+        }
+    }
+    main()
+</script>
+</body>
+</html>
